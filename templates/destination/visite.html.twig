@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}J'ai visité{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h2 class="text-center mt-5 mb-3">Blog visite </h2>
+        <a href="{{ path('app_review_new') }}"><button class="btn btn-primary">Mettre un commentaire</button></a>
+
+        {% for destination in destinations %}
+            <div class="row">
+                <div class="col mb-5">
+                    <div class="card">
+                        {% for review in reviews %}
+                            <img class="card-img-top" src="{{ vich_uploader_asset(review)  }}" alt="Project Image" height="280" width="800">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ destination.name }}</h5>
+                            <p class="card-text">{{ destination.description }}</p>
+                            <h5 class="card-title">Commentaire:</h5>
+                            <p class="card-text">{{ review.content}}</p>
+                            <p class="card-text">{{ review.user}}</p>
+                            <p class="card-text">Note: {{ review.notation}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        {% endfor %}
+        {% endfor %}
+    </div>
+{% endblock %}

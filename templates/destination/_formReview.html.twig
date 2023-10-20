@@ -1,0 +1,30 @@
+<div class="container">
+    {{ form_start(form) }}
+    <div class="row mb-3">
+        <div class="col-lg-1" >
+            {{ form_label(form.content) }}
+        </div>
+        <div>
+            {{ form_widget(form.content) }}
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-lg-1" >
+            {{ form_label(form.notation) }}
+        </div>
+        <div>
+            {{ form_widget(form.notation) }}
+        </div>
+    </div>
+{#    <div class="row mb-3">#}
+{#        <div class="col-lg-2" >#}
+{#            {{ form_label(form.date) }}#}
+{#        </div>#}
+{#        <div>#}
+{#            {{ form_widget(form.date) }}#}
+{#        </div>#}
+{#    </div>#}
+    {{ form_widget(form.add) }}
+
+    {{ form_end(form) }}
+</div>
